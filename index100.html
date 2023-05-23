@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../../favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<style>
+			body {
+			  background-position: left top;
+			  font-family: "Inter", sans-serif;
+			  margin: 0;
+			  background-repeat: no-repeat;
+			}
+	  
+			* {
+			  box-sizing: border-box;
+			}
+	  
+			a {
+			  text-decoration: none;
+			  color: black;
+			}
+	  
+			nav {
+			  position: sticky;
+			  top: 0;
+			  left: 0;
+			  right: 0;
+			  margin: 0 80px 0 80px;
+			  padding-top: 2rem;
+			  padding-bottom: 2rem;
+			}
+	  
+			nav .nav-container {
+			  display: flex;
+			  justify-content: space-between;
+			  align-items: center;
+			}
+	  
+			.nav-links {
+			  display: flex;
+			  justify-content: flex-end;
+			  align-items: center;
+			  margin: -1em 0;
+			  flex: 1 0 auto;
+			}
+	  
+			.nav-links .link {
+			  position: relative;
+			  margin: 1em;
+			  font-size: 0.85rem;
+			  letter-spacing: 1px;
+			  color: black;
+			}
+	  
+			.nav-logo {
+			  position: relative;
+			  line-height: 1;
+			  font-size: 1.1rem;
+			  color: black;
+			}
+            label {
+  display: block;
+  margin-bottom: 10px;
+ }
+ input[type='text'] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 150px;
+ }
+ table {
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 100%;
+ }
+ th,
+ td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+ }
+ th {
+  background-color: #eee;
+ }
+ button {
+  padding: 5px 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+ }
+ h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+ }
+ 
+
+   
+       .container {
+           margin: 50px auto;
+           max-width: 800px;
+           padding: 0 20px;
+       }
+		  </style>
+		
+		<link href="../../_app/immutable/assets/_layout.65099de4.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/_layout.0895a6a1.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/_page.efc608a8.css" rel="stylesheet">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
+
+
+<nav><div class="nav-container"><a href="index.html" class="nav-logo" title="Back to Homepage">Инженерия</a>
+        <div class="nav-links"><a href="index2.html" class="link">О нас</a><a href="index3.html" class="link">Блог</a><a href="index4.html" class="link">Портфолио</a><a href="index5.html" class="link">Контакты</a></div></div></nav>
+
+<div class="container svelte-1m8mvlz">
+    <div class="container"><div class="container svelte-1mafylx"><a href="index4.html">Домой</a>
+    <h1 class="svelte-xjovyr">Учет расходов</h1>
+
+<form><label for="name" class="svelte-xjovyr">Название:</label>
+ <input type="text" id="name" class="svelte-xjovyr" value="">
+ <label for="amount" class="svelte-xjovyr">Сумма:</label>
+ <input type="text" id="amount" class="svelte-xjovyr" value="">
+ <button type="submit" class="svelte-xjovyr">Добавить</button></form>
+
+<table class="svelte-xjovyr"><thead><tr><th class="svelte-xjovyr">Название</th>
+   <th class="svelte-xjovyr">Сумма</th>
+   <th class="svelte-xjovyr">Действия</th></tr></thead>
+ <tbody></tbody>
+</table>
+   </div></div>
+</div>
+
+
+			
+			<script>
+				{
+					__sveltekit_to3qk8 = {
+						base: new URL("../..", location).pathname.slice(0, -1),
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null,null,null];
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.1ee0651f.js"),
+						import("../../_app/immutable/entry/app.73eb89e8.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 4, 6, 16],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+                let expenses = [];
+
+                let newName = '';
+                let newAmount = '';
+
+                function addExpense() {
+                const obj = {
+                name: newName,
+                amount: parseInt(newAmount),
+                };
+                expenses.push(obj);
+                expenses = expenses;
+                newName = '';
+                newAmount = '';
+                }
+
+                function deleteExpense(index) {
+                expenses.splice(index, 1);
+                expenses = expenses;
+                }
+			</script>
+		</div>
+	</body>
+</html>
